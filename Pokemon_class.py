@@ -18,8 +18,15 @@ class Pokemon():
         self.sp_df = sp_df
         self.spd = spd
         self.moves = moves
-    def __repr__(self):
-       return "Name: %s\nType: %s \nHP: %s \nlv: %s \nMoves:\n%s\n%s\n%s\n%s"%(self.name,self.nature,self.hp,self.lv,self.moves[0], self.moves[1], self.moves[2],  self.moves[3])
 
-pikachu = Pokemon('Pikachu', 'Eletric', '1',25, 30, 15, 50, 25,50, ['Tackle', 'ThunderShock', 'Body Slam', 'Surf'])
-print(pikachu)
+    def __repr__(self):
+       return "Name: %s\nType: %s \nHP: %s \nlv: %s \nMoves:\n%s" % (self.name, self.nature, self.hp, self.lv, self.moves)
+
+    def show_moves(self):
+       print(self.name + " Knows: \n")
+       for m in pikachu.moves:
+          print(m[0] + "\nDamage: "+str(m[1])+"\n" +"Type: " + str(m[2])+"\n" )
+
+
+pikachu = Pokemon('Pikachu', 'Eletric', '1', 25, 30, 15, 50, 25, 50, [['Tackle',25, "Normal"], ['Body Slam',25, "Normal"], ['Thundershock',50, "Eletric"],['Water',60, "Water"]])
+pikachu.show_moves()
